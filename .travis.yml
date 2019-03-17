@@ -14,6 +14,7 @@ env:
         - REPO_NAME="ng-lazy-component-demo"
         - GITHUB_NAME="railsstudent"
         - GITHUB_EMAIL="cleung334@gmail.com"
+        - DIST_DIR="dist/angular-lazy-component"
 
 before_install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash -s
@@ -28,7 +29,7 @@ script:
     - npm run build-ngh
 
 after_success:
-    - ngh --repo="$GITHUB_ORG/$GITHUB_NAME/$REPO_NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=dist/ng-lazy-component-demo --no-silent
+    - ngh --repo="$GITHUB_ORG/$GITHUB_NAME/$REPO_NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir="DIST_DIR" --no-silent
 
 branches:
     only:
