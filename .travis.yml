@@ -29,7 +29,7 @@ script:
     - npm run build-ngh
 
 after_success:
-    - ngh --repo="$GITHUB_ORG/$GITHUB_NAME/$REPO_NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir="DIST_DIR" --no-silent
+    - ngh --repo="$GITHUB_ORG/$GITHUB_NAME/$REPO_NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir="$DIST_DIR" --no-silent
 
 branches:
     only:
