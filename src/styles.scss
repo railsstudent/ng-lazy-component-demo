@@ -1,0 +1,27 @@
+/* Add application styles & imports to this file! */
+// @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Lato;
+}
+
+p {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+html {
+    width: 100vw;
+    height: 100%;
+}
+
+body {
+    display: block;
+    min-height: 100vh;
+    padding: 0.5rem;
+}
