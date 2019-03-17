@@ -11,7 +11,7 @@ cache:
 env:
     global:
         - GITHUB_ORG="https://GH_TOKEN@github.com"
-        - REPO_NAME="ng-lazy-component"
+        - REPO_NAME="ng-lazy-component-demo"
         - GITHUB_NAME="railsstudent"
         - GITHUB_EMAIL="cleung334@gmail.com"
 
@@ -28,7 +28,7 @@ script:
     - npm run build-ngh
 
 after_success:
-    - ngh --repo="$GITHUB_ORG/$GITHUB_NAME/$REPO_NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=dist/ng-lazy-component --no-silent
+    - ngh --repo="$GITHUB_ORG/$GITHUB_NAME/$REPO_NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=dist/ng-lazy-component-demo --no-silent
 
 branches:
     only:
