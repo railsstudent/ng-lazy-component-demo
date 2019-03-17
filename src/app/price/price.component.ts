@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from '@angular/core';
 import { combineLatest, interval, Observable } from 'rxjs';
-import { filter, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { PriceService, VisibilityService } from '../services';
 
 @Component({
@@ -18,8 +18,9 @@ export class PriceComponent implements OnInit {
     ngOnInit() {
         const elementInSight$ = this.visibilityService.elementInSight(this.host);
 
-        this.price$ = combineLatest(interval(2000), elementInSight$, (_counter, visible) => visible).pipe(
+        this.price$ = combineLatest(interval(2000), elementInSight$).pipe(
             // tap(visible => console.log('visible', visible)),
+            map(([, visible]) => visible),
             filter(visible => visible),
             // tap(() => console.log('current time', new Date())),
             switchMap(() => this.priceService.getPrice()),
